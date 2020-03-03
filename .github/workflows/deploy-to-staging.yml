@@ -7,7 +7,7 @@ on:
   schedule:
     - cron: '10 0 * * *'
   repository_dispatch:
-    types: rebuild-staging
+    types: [rebuild-staging, rebuild-site]
 
 jobs:
   build:
@@ -32,4 +32,3 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.token }}
         BRANCH: gh-pages
         FOLDER: _site
-        CLEAN: true
